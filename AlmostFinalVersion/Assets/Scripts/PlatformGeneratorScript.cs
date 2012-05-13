@@ -27,6 +27,8 @@ public class PlatformGeneratorScript : MonoBehaviour
 
 	public float platformDrag = 1;
 
+	public bool isCircular = false;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,13 +41,20 @@ public class PlatformGeneratorScript : MonoBehaviour
 			platformList[i].transform.parent = transform;
 			platformList[i].rigidbody.drag = platformDrag;
 
-			float tempDepth = platformList[i].transform.localScale.z;
-			Vector3 tempPosition = platformList[i].transform.localPosition;
-			float newDepth = platformDepthOffset + i * tempDepth;
-			newDepth += i*distanceBetweenPlatforms;
-			tempPosition.z = newDepth;
-			platformList[i].transform.localPosition = tempPosition;
+			if(isCircular)
+			{
 
+			}
+			//normal straigh platform
+			else
+			{
+				float tempDepth = platformList[i].transform.localScale.z;
+				Vector3 tempPosition = platformList[i].transform.localPosition;
+				float newDepth = platformDepthOffset + i * tempDepth;
+				newDepth += i*distanceBetweenPlatforms;
+				tempPosition.z = newDepth;
+				platformList[i].transform.localPosition = tempPosition;
+			}
 
 		}
 
