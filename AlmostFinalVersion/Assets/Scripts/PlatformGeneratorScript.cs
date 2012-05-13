@@ -29,6 +29,10 @@ public class PlatformGeneratorScript : MonoBehaviour
 
 	public bool isCircular = false;
 
+	public float platformScaleX = 1;
+	public float platformScaleY = 1;
+	public float platformScaleZ = 1;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -40,6 +44,9 @@ public class PlatformGeneratorScript : MonoBehaviour
 			// set as child of generator
 			platformList[i].transform.parent = transform;
 			platformList[i].rigidbody.drag = platformDrag;
+
+			Vector3 pScale = new Vector3(platformScaleX, platformScaleY, platformScaleZ);
+			platformList[i].transform.localScale = pScale;
 
 			if(isCircular)
 			{
