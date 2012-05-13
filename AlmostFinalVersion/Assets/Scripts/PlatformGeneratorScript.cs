@@ -25,6 +25,8 @@ public class PlatformGeneratorScript : MonoBehaviour
 
 	public bool isFrequency = true;
 
+	public float platformDrag = 1;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -35,6 +37,7 @@ public class PlatformGeneratorScript : MonoBehaviour
 
 			// set as child of generator
 			platformList[i].transform.parent = transform;
+			platformList[i].rigidbody.drag = platformDrag;
 
 			float tempDepth = platformList[i].transform.localScale.z;
 			Vector3 tempPosition = platformList[i].transform.localPosition;

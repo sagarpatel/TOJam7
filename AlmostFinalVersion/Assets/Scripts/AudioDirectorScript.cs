@@ -19,8 +19,10 @@ public class AudioDirectorScript : MonoBehaviour
 	public float bScale = 20.0f;
 	public float aScale = 20.0f;
 	
-	const int maxLayerCount = 10;
+	const int maxLayerCount = 5;
 	public AudioSource[] audioSourceArray = new AudioSource[maxLayerCount];
+
+	public int layerCount;
 
 	public int layerProgressIndex = -1;
 
@@ -32,7 +34,12 @@ public class AudioDirectorScript : MonoBehaviour
 	void Start () 
 	{
 
-		
+		for(int i = 0; i < layerCount ; i++)
+		{
+			audioSourceArray[i].Play();
+			audioSourceArray[i].volume = 0;
+
+		}
 
 
 
@@ -91,7 +98,68 @@ public class AudioDirectorScript : MonoBehaviour
 			
 		}
 
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
 
+			layerProgressIndex = 0;
+			for(int i = 0; i<= layerProgressIndex ; i++)
+			{
+				audioSourceArray[i].volume = 1;
+			}
+			
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			layerProgressIndex = 1;
+			for(int i = 0; i<= layerProgressIndex ; i++)
+			{
+				audioSourceArray[i].volume = 1;
+			}
+
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			layerProgressIndex = 2;
+			for(int i = 0; i<= layerProgressIndex ; i++)
+			{
+				audioSourceArray[i].volume = 1;
+			}
+
+
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha4))
+		{
+			layerProgressIndex = 3;
+			for(int i = 0; i<= layerProgressIndex ; i++)
+			{
+				audioSourceArray[i].volume = 1;
+			}
+
+
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha5))
+		{
+			layerProgressIndex = 4;
+			for(int i = 0; i<= layerProgressIndex ; i++)
+			{
+				audioSourceArray[i].volume = 1;
+			}
+
+
+		}
+
+
+		for(int i = layerProgressIndex +1; i< layerCount ; i++)
+		{
+			audioSourceArray[i].volume = 0;
+		}
+
+
+		
 
 		/* if ( Input.GetMouseButton( 1 ) )
 		 {
