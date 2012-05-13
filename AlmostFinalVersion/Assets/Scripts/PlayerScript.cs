@@ -9,6 +9,7 @@ public float respawnHeight = 20;
 	// Use this for initialization
 	void Start () 
 	{
+	//	collider.isTrigger = true;
 	
 	}
 	
@@ -24,6 +25,27 @@ public float respawnHeight = 20;
 		}
 	
 	}
+
+	/*
+
+	void OnControllerColliderHit(ControllerColliderHit hit) 
+	{
+
+
+		if( hit.gameObject.ToString() == "Checkpoint")
+		{
+
+			Debug.Log("Touching checkpoint");
+
+			hit.gameObject.GetComponent<CheckpointScript>().deathHeight = fallOffWorldHeight;
+			hit.gameObject.GetComponent<CheckpointScript>().spawnHeight = respawnHeight;
+
+		}
+
+
+	}
+
+	*/
 
 	
 }
