@@ -86,7 +86,7 @@ public class PlatformGeneratorScript : MonoBehaviour
 			}
 
 
-			platformList[i].rigidbody.AddForce( Vector3.up * impulseValue, ForceMode.Impulse);
+			platformList[i].rigidbody.AddRelativeForce( Vector3.up * impulseValue, ForceMode.Impulse);
 			platformList[i].renderer.material.color = tempColor;
 
 
