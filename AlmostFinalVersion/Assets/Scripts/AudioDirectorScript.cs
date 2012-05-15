@@ -41,6 +41,10 @@ public class AudioDirectorScript : MonoBehaviour
 
 		}
 
+		if(layerCount ==1)
+		{
+			audioSourceArray[0].volume = 1;
+		}
 
 
 
@@ -98,6 +102,8 @@ public class AudioDirectorScript : MonoBehaviour
 			
 		}
 
+		/*
+
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 
@@ -151,7 +157,7 @@ public class AudioDirectorScript : MonoBehaviour
 
 
 		}
-
+		*/
 
 		for(int i = layerProgressIndex +1; i< layerCount ; i++)
 		{
